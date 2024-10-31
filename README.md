@@ -1,11 +1,12 @@
 # XedoxFramwork
 Android 2D Graphics FW for Android.
 
-The framework is great for simple 2D games, there is no documentation yet, but the code and structure are very simple, I will also make a small guide below.
+The framework is great for simple 2D games, there is no documentation yet, but the code and structure are very simple.
 
+# Get started
 1. Download [the framework](github.com/XedoxDev/XedoxFramwork/releases/download/v0.0.1) and move to app/libs/ to your Android project.
 2. Add file in dependencies:
-```groovy
+```gradle
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
 }
