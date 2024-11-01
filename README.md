@@ -20,20 +20,24 @@ setContentView(view);
 ```java
 public class Main extends IScreen {
 
-    Sprite sprite;
+    private Sprite sprite;
     private SpriteManager sm;
+    private RenderManager rm;
 
     @Override
     public void start() {
         sm = new SpriteManager();
+        rm = new RenderManager(this);
         sprite = new Sprite(this);
         sprite.setSprite(sm.readSprite(view.getContext(), "spriteName.png");
         sprite.setSize(100, 100);
+        rm.add(sprite);
     }
 
     @Override
     public void render(Canvas canvas) {
-        sprite.draw();
+        canvas.drawColor(0xFF000000); // BLACK
+        rm.displayObjects();
     }
 }
 ```
