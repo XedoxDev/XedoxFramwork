@@ -21,11 +21,13 @@ setContentView(view);
 public class Main extends IScreen {
 
     Sprite sprite;
+    private SpriteManager sm;
 
     @Override
     public void start() {
+        sm = new SpriteManager();
         sprite = new Sprite(this);
-         sprite.loadBitmap(App.context, "player.png");
+        sprite.setSprite(sm.readSprite(view.getContext(), "spriteName.png");
         sprite.setSize(100, 100);
     }
 
