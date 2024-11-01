@@ -46,10 +46,10 @@ public class Shape extends Object {
     @Override
     public void display(Canvas canvas) {
         shape.reset();
-        if (points.size() > 0) shape.moveTo(points.get(0).x, points.get(0).y);
+        if (points.size() > 0) shape.moveTo(x + points.get(0).x, y + points.get(0).y);
         if (points.size() > 1) {
             for (Point point : points) {
-                shape.lineTo(point.x, point.y);
+                shape.lineTo( x + point.x, y + point.y);
             }
         }
         canvas.drawPath(shape, this);

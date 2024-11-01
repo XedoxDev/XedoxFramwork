@@ -2,14 +2,13 @@
 A simple structured 2D graphical framework for Android.
 
 # Get started
-1. Download [the framework](github.com/XedoxDev/XedoxFramwork/releases/download/v0.0.1) and move to app/libs/ to your Android project.
+1. Download [the framework](github.com/XedoxDev/XedoxFramwork/releases/) and move to app/libs/ to your Android project.
 2. Add file in dependencies:
 ```gradle
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
 }
 ```
-for using.
 
 3. Create XSurfaceView, for visible.
 ```java

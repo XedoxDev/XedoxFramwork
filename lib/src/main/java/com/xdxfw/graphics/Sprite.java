@@ -1,11 +1,8 @@
 package com.xdxfw.graphics;
 
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.media.Image;
 
 public class Sprite extends Object {
 
