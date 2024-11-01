@@ -18,7 +18,7 @@ setContentView(view);
 ```
 4. Create main Screen. create a class inheriting ScreenAdapter, override the start and render methods. Example:
 ```java
-public class Main extends IScreen {
+public class Main extends ScreenAdapter {
 
     private Sprite sprite;
     private SpriteManager sm;
