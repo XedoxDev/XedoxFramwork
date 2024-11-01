@@ -1,7 +1,5 @@
 # XedoxFramwork
-Android 2D Graphics FW for Android.
-
-The framework is great for simple 2D games, there is no documentation yet, but the code and structure are very simple.
+A simple structured 2D graphical framework for Android.
 
 # Get started
 1. Download [the framework](github.com/XedoxDev/XedoxFramwork/releases/download/v0.0.1) and move to app/libs/ to your Android project.
@@ -13,12 +11,12 @@ dependencies {
 ```
 for using.
 
-3. Create XSurfaceView, add main screen:
+3. Create XSurfaceView, for visible.
 ```java
 XSurfaceView view = new XSurfaceView(this, new Main());
 setContentView(view);
 ```
-4. Create main Screen. create a class inheriting IScreen, override the start and render methods. Example:
+4. Create main Screen. create a class inheriting ScreenAdapter, override the start and render methods. Example:
 ```java
 public class Main extends IScreen {
 
@@ -26,22 +24,14 @@ public class Main extends IScreen {
 
     @Override
     public void start() {
-        try {
-            sprite = new Sprite(this);
-            sprite.loadBitmap(App.context, "player.png");
-            sprite.setSize(100, 100);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        sprite = new Sprite(this);
+         sprite.loadBitmap(App.context, "player.png");
+        sprite.setSize(100, 100);
     }
 
     @Override
     public void render(Canvas canvas) {
-        try {
-            sprite.draw();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        sprite.draw();
     }
 }
 ```
