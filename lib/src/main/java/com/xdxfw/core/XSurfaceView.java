@@ -7,20 +7,20 @@ import android.view.SurfaceView;
 
 public class XSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 
-    private IScreen screen;
+    private ScreenAdapter screen;
     private RenderThread thread;
 
-    public XSurfaceView(Context context, IScreen startScreen) {
+    public XSurfaceView(Context context, ScreenAdapter startScreen) {
         super(context);
         this.screen = startScreen;
         getHolder().addCallback(this);
     }
 
-    public IScreen getScreen() {
+    public ScreenAdapter getScreen() {
         return this.screen;
     }
 
-    public void setScreen(IScreen screen) {
+    public void setScreen(ScreenAdapter screen) {
         this.screen = screen;
     }
 

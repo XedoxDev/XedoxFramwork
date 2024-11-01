@@ -3,28 +3,21 @@ package com.xdxfw.graphics;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import com.xdxfw.core.IScreen;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.media.Image;
 
 public class Sprite extends Object {
 
     private int x, y;
     private Bitmap sprite;
+    private float angle;
+    private boolean visible;
 
-    public Sprite(IScreen context) {
-        super(context);
-    }
-
-    @Override
-    public void draw() {
-        context.getCanvas().drawBitmap(sprite, x, y, this);
-    }
-
-    public void loadBitmap(Context context, String name) {
-        try {
-            sprite = BitmapFactory.decodeStream(context.getAssets().open(name));
-        } catch (Exception err) {
-            err.printStackTrace();
-        }
+    public Sprite() {
+        super();
+        angle = 0;
+        visible = true;
     }
 
     public void setSize(int width, int height) {
@@ -40,27 +33,41 @@ public class Sprite extends Object {
         sprite.setHeight(height);
     }
 
-    public int getX() {
-        return this.x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return this.y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public Bitmap getSprite() {
         return this.sprite;
     }
 
     public void setSprite(Bitmap sprite) {
         this.sprite = sprite;
+    }
+
+    @Override
+    public void display(Canvas canvas) {
+        if (visible) {
+            Matrix oldMtrix = null;
+            Matrix newMatrix = null;
+            canvas.getMatrix(oldMtrix);
+            canvas.getMatrix(newMatrix);
+            newMatrix.setRotate(angle, x, y);
+            canvas.setMatrix(newMatrix);
+            canvas.drawBitmap(sprite, x, y, this);
+            canvas.setMatrix(oldMtrix);
+        }
+    }
+
+    public float getAngle() {
+        return this.angle;
+    }
+
+    public void setAngle(float angle) {
+        this.angle = angle;
+    }
+
+    public boolean getVisible() {
+        return this.visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 }

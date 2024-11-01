@@ -3,7 +3,7 @@ package com.xdxfw.core;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-public abstract class IScreen {
+public abstract class ScreenAdapter {
 
     protected XSurfaceView view;
     protected MotionEvent event;
@@ -13,7 +13,7 @@ public abstract class IScreen {
 
     public void render(Canvas canvas) {}
 
-    public void setScreen(IScreen newScreen) {
+    public void setScreen(ScreenAdapter newScreen) {
         view.setScreen(newScreen);
     }
 
@@ -39,5 +39,13 @@ public abstract class IScreen {
 
     public void setCanvas(Canvas canvas) {
         this.canvas = canvas;
+    }
+
+    public XSurfaceView getView() {
+        return this.view;
+    }
+
+    public void setView(XSurfaceView view) {
+        this.view = view;
     }
 }
