@@ -1,6 +1,17 @@
 # XedoxFramwork
 A simple structured 2D graphical framework for Android.
 
+# Tasks
+- [x] Vectors (Vec2, Vec3)
+- [x] Work with sound
+- [x] Rendering Sprites
+- [x] AnimateSprites
+- [x] Button (Object)
+- [x] Screens (Scenes)
+- [x] Render in a separate thread
+- [x] Simple structure
+- [x] Open source
+- [ ] 
 # Get started
 1. Download [the framework](github.com/XedoxDev/XedoxFramwork/releases/) and move to app/libs/ to your Android project.
 2. Add file in dependencies:
